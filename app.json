@@ -1,0 +1,7 @@
+{
+  "name": "Valkyrecords",
+  "description": "DGP Solver to diagram sentences",
+  "repository": "https://github.com/bigtester099/",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["DGP", "Solver", "Search"]
+}
