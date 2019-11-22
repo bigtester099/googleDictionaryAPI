@@ -9,12 +9,12 @@ app.get("/", function (req, res) {
 		queriedWord = req.query.define,
 		queriedLanguage = req.query.lang || 'en';
 	if (!queriedWord) {
-		res.sendFile(path.join(__dirname + '/views//index.html'));
+		res.sendFile(path.join(__dirname + '/index.html'));
 	} else {
 		console.log(queriedWord);
 		if (encodeURIComponent(queriedWord).includes("%20") && queriedLanguage === 'en') {
 			res.header("Access-Control-Allow-Origin", "*");
-			return res.status(404).sendFile(path.join(__dirname + '/views/404.html'));
+			return res.status(404).sendFile(path.join(__dirname + '/404.html'));
 		}
 		var url,
 			replaceDefine = {
@@ -40,7 +40,7 @@ app.get("/", function (req, res) {
 				if ($(".lr_container").length === 0) {
 					console.log(queriedWord + " is not present in Dictionary.");
 					res.header("Access-Control-Allow-Origin", "*");
-					return res.status(404).sendFile(path.join(__dirname + '/views/404.html'));
+					return res.status(404).sendFile(path.join(__dirname + '/404.html'));
 				}
 				$(".lr_container").find(".VpH2eb.vmod.XpoqFe").each((index, e) => {
 					let audio,
